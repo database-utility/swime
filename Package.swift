@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "Swime",
+  name: "swime",
   platforms: [
     .iOS(.v9),
     .macOS(.v10_10)
@@ -10,22 +10,7 @@ let package = Package(
   products: [
     .library(name: "Swime", targets: ["Swime"])
   ],
-  dependencies: [
-    .package(url: "https://github.com/Quick/Quick", from: "1.3.4"),
-    .package(url: "https://github.com/Quick/Nimble", from: "7.3.3")
-  ],
   targets: [
-    .target(
-      name: "Swime",
-      path: "./Sources"
-   ),
-    .testTarget(
-      name: "SwimeTests",
-      dependencies: [
-        "Swime",
-        "Quick",
-        "Nimble"
-      ]
-    )
+    .target(name: "Swime", path: "./Sources")
   ]
 )
